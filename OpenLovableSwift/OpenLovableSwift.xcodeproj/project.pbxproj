@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		42300EBB2E4B570D00DEDDD3 /* AIProxy in Frameworks */ = {isa = PBXBuildFile; productRef = 42300EBA2E4B570D00DEDDD3 /* AIProxy */; };
+		42300EBE2E4B571700DEDDD3 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 42300EBD2E4B571700DEDDD3 /* SwiftSoup */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		42300E812E4B52AC00DEDDD3 /* OpenLovableSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLovableSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42300EBB2E4B570D00DEDDD3 /* AIProxy in Frameworks */,
+				42300EBE2E4B571700DEDDD3 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			);
 			name = OpenLovableSwift;
 			packageProductDependencies = (
+				42300EBA2E4B570D00DEDDD3 /* AIProxy */,
+				42300EBD2E4B571700DEDDD3 /* SwiftSoup */,
 			);
 			productName = OpenLovableSwift;
 			productReference = 42300E812E4B52AC00DEDDD3 /* OpenLovableSwift.app */;
@@ -94,6 +103,10 @@
 			);
 			mainGroup = 42300E782E4B52AC00DEDDD3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				42300EB92E4B570D00DEDDD3 /* XCRemoteSwiftPackageReference "aiproxyswift" */,
+				42300EBC2E4B571700DEDDD3 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 42300E822E4B52AC00DEDDD3 /* Products */;
 			projectDirPath = "";
@@ -321,6 +334,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42300EB92E4B570D00DEDDD3 /* XCRemoteSwiftPackageReference "aiproxyswift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lzell/aiproxyswift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.124.0;
+			};
+		};
+		42300EBC2E4B571700DEDDD3 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42300EBA2E4B570D00DEDDD3 /* AIProxy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42300EB92E4B570D00DEDDD3 /* XCRemoteSwiftPackageReference "aiproxyswift" */;
+			productName = AIProxy;
+		};
+		42300EBD2E4B571700DEDDD3 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42300EBC2E4B571700DEDDD3 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42300E792E4B52AC00DEDDD3 /* Project object */;
 }

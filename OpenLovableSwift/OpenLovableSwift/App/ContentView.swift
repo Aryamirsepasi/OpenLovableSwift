@@ -11,11 +11,11 @@ struct ContentView: View {
   @Environment(AppState.self) private var app
 
   var body: some View {
-    NavigationSplitView(preferredCompactColumn: .content) {
-      ChatView()
-        .navigationTitle("Chat")
-        .frame(minWidth: 280)
-    } content: {
+      NavigationSplitView {
+        ChatView()
+          .navigationTitle("Chat")
+          .frame(minWidth: 280)
+      } content: {
       VStack(spacing: 0) {
         HStack {
           Text("Project").font(.headline)
@@ -27,10 +27,12 @@ struct ContentView: View {
         Divider()
 
         HSplitView {
-          FileTreeView(selection: Binding(
-            get: { app.selectedFileID },
-            set: { app.selectFile($0!) }
-          ))
+            FileTreeView(selection: Binding(
+              get: { app.selectedFileID },
+              set: { newValue in
+                if let id = newValue { app.selectFile(id) }
+              }
+            ))
           .frame(minWidth: 220, idealWidth: 260)
 
           CodeEditorView(

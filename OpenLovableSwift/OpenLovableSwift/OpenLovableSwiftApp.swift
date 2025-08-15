@@ -6,12 +6,34 @@
 //
 
 import SwiftUI
+import Observation
+import AIProxy
 
 @main
 struct OpenLovableSwiftApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @State private var appState = AppState()
+
+  init() {
+    AIProxy.configure(
+      logLevel: .debug,
+      printRequestBodies: false,
+      printResponseBodies: false,
+      resolveDNSOverTLS: true,
+      useStableID: false
+    )
+  }
+
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environment(appState)
     }
+    .windowResizability(.contentSize)
+
+    Settings {
+      SettingsView()
+        .environment(appState)
+        .frame(minWidth: 520, minHeight: 440)
+    }
+  }
 }
